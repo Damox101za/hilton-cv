@@ -1,0 +1,69 @@
+{
+  "profile": {
+    "name": "Hilton Vusi Kholokholo",
+    "title": "IT Operations Engineer & Systems Developer",
+    "location": "Johannesburg, South Africa",
+    "phone": "+27-646-816-715",
+    "email": "hiltonkholokholo@icloud.com",
+    "linkedin": "https://www.linkedin.com/in/hilton-k-a824361a8/",
+    "github": "https://github.com",
+    "summary": "Highly analytical IT Operations Specialist and Systems Developer with a proven track record of building automated infrastructure solutions, managing enterprise data sanitization architecture, and developing internal software applications. Adept at bridging the gap between high-level network support and backend engineering to deliver secure, efficient, and cost-effective technology solutions."
+  },
+  "skills": [
+    { "name": "Go (Golang)",         "category": "Languages & Data",         "color": "cyan",   "level": 90 },
+    { "name": "Node.js",             "category": "Languages & Data",         "color": "cyan",   "level": 80 },
+    { "name": "SQL",                 "category": "Languages & Data",         "color": "cyan",   "level": 85 },
+    { "name": "JavaScript (React)",  "category": "Languages & Data",         "color": "cyan",   "level": 76 },
+    { "name": "Advanced Excel",      "category": "Languages & Data",         "color": "cyan",   "level": 93 },
+    { "name": "Server Architecture", "category": "Systems & Infrastructure", "color": "purple", "level": 88 },
+    { "name": "Linux Workstations",  "category": "Systems & Infrastructure", "color": "purple", "level": 85 },
+    { "name": "WinPE Deployment",    "category": "Systems & Infrastructure", "color": "purple", "level": 95 },
+    { "name": "Advanced Networking", "category": "Systems & Infrastructure", "color": "purple", "level": 82 },
+    { "name": "Microsoft 365 Admin", "category": "Enterprise Operations",    "color": "blue",   "level": 90 },
+    { "name": "Azure Management",    "category": "Enterprise Operations",    "color": "blue",   "level": 80 },
+    { "name": "Tier 3 Support",      "category": "Enterprise Operations",    "color": "blue",   "level": 96 },
+    { "name": "Active Directory",    "category": "Enterprise Operations",    "color": "blue",   "level": 87 },
+    { "name": "ITAD ERP Systems",    "category": "Enterprise Operations",    "color": "blue",   "level": 88 }
+  ],
+  "experience": [
+    {
+      "role": "IT Operations Engineer / Technical Support Specialist",
+      "company": "Xperien (PTY) Ltd",
+      "period": "2020 – Present",
+      "type": "Engineering",
+      "color": "cyan",
+      "bullets": [
+        "Engineered a custom WinPE deployment application in Go to automate secure enterprise equipment data destruction and hardware sanitization.",
+        "Designed and built a high-capacity custom server infrastructure tailored for high-volume, secure data-wiping processes utilizing specialized third-party tools.",
+        "Successfully implemented and optimized a corporate ITAD ERP system, enhancing asset tracking accuracy and workplace sustainability metrics.",
+        "Developed internal data-handling software to extract and convert Excel data streams into automated, verified PDF compliance certifications for magnetic data destruction operations.",
+        "Proactively manage and maintain core server infrastructure, routing environments, and active directories while providing senior Tier 3 resolution for complex technical incidents."
+      ]
+    },
+    {
+      "role": "Warehouse Assistant & Data Destruction Technician",
+      "company": "Xperien (PTY) Ltd",
+      "period": "2016 – 2020",
+      "type": "Operations",
+      "color": "purple",
+      "bullets": [
+        "Executed industrial data sanitization protocols, utilizing physical, magnetic, and software-driven data destruction methodologies.",
+        "Supervised a small team of co-workers and managed operational tasks to ensure secure equipment processing lines ran smoothly and efficiently."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Short Learning Programme: Introduction to Programming",
+      "institution": "Boston City Campus",
+      "year": "2022",
+      "highlights": ["Database Systems (Access): 96% Distinction", "Systems Development: 76%"]
+    },
+    {
+      "degree": "National Certificate: IT (Technical Support)",
+      "institution": "Gauteng City College / MICT SETA",
+      "year": "2021",
+      "highlights": ["NQF Level 4", "Technical Support Specialisation"]
+    }
+  ]
+}

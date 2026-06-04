@@ -271,7 +271,7 @@ function Nav() {
         <span className="nav__brand-prefix">{'>'}</span>HVK
       </div>
       <div className="nav__links" role="list">
-        {[['terminal','Terminal'],['skills','Skills'],['experience','Experience'],['education','Education']].map(([id, label]) => (
+        {[['terminal','Terminal'],['interests','Interests'],['techstack','Tech Stack'],['skills','Skills'],['experience','Experience'],['education','Education'],['projects','Projects']].map(([id, label]) => (
           <button key={id} onClick={() => scrollTo(id)} className="nav__link" role="listitem">{label}</button>
         ))}
       </div>
@@ -304,6 +304,10 @@ function Hero() {
 
           <p className="hero__title">{profile.title}</p>
           <p className="hero__location">📍 {profile.location}</p>
+
+          {profile.philosophy && (
+            <p className="hero__philosophy">"{profile.philosophy}"</p>
+          )}
 
           <div className="hero__links">
             <a href={profile.github}   target="_blank" rel="noreferrer" className="hero-btn hero-btn--cyan">
@@ -447,6 +451,125 @@ function Terminal() {
         )}
       </div>
     </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Interests
+// ─────────────────────────────────────────────────────────────────────────────
+
+function InterestsSection() {
+  const { interests } = useCVData();
+  if (!interests?.length) return null;
+  return (
+    <section id="interests" className="section">
+      <div className="section-header">
+        <p className="section-label">INTERESTS.LIST</p>
+        <h2 className="section-title">What I'm Into</h2>
+        <p className="section-sub">Areas I'm passionate about and actively exploring.</p>
+      </div>
+      <div className="interests-grid">
+        {interests.map((item, i) => (
+          <div key={i} className="interest-card">
+            <span className="interest-icon">{item.icon}</span>
+            <span className="interest-text">{item.text}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Tech Stack
+// ─────────────────────────────────────────────────────────────────────────────
+
+const DEVICON_MAP = {
+  python:     'devicon-python-plain',
+  javascript: 'devicon-javascript-plain',
+  go:         'devicon-go-original',
+  c:          'devicon-c-plain',
+  java:       'devicon-java-plain',
+  html5:      'devicon-html5-plain',
+  css3:       'devicon-css3-plain',
+  bash:       'devicon-bash-plain',
+  linux:      'devicon-linux-plain',
+  git:        'devicon-git-plain',
+  vscode:     'devicon-vscode-plain',
+  github:     'devicon-github-original',
+  npm:        'devicon-npm-original-wordmark',
+  docker:     'devicon-docker-plain',
+  figma:      'devicon-figma-plain',
+};
+
+function TechItem({ item }) {
+  const iconClass = DEVICON_MAP[item.icon];
+  return (
+    <div className="tech-item">
+      {iconClass
+        ? <i className={`${iconClass} colored tech-item__icon`} aria-hidden="true" />
+        : <span className="tech-item__icon tech-item__icon--fallback">{item.name[0]}</span>
+      }
+      <span className="tech-item__name">{item.name}</span>
+    </div>
+  );
+}
+
+function TechStackSection() {
+  const { techStack } = useCVData();
+  if (!techStack) return null;
+  return (
+    <section id="techstack" className="section">
+      <div className="section-header">
+        <p className="section-label">TECH.STACK</p>
+        <h2 className="section-title">Technologies</h2>
+        <p className="section-sub">Languages and tools I work with regularly.</p>
+      </div>
+      <div className="techstack-groups">
+        <div className="techstack-group">
+          <p className="techstack-group__label">Languages</p>
+          <div className="tech-grid">
+            {techStack.languages.map((item, i) => <TechItem key={i} item={item} />)}
+          </div>
+        </div>
+        <div className="techstack-group">
+          <p className="techstack-group__label">Tools &amp; Platforms</p>
+          <div className="tech-grid">
+            {techStack.tools.map((item, i) => <TechItem key={i} item={item} />)}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Projects
+// ─────────────────────────────────────────────────────────────────────────────
+
+function ProjectsSection() {
+  const { projects } = useCVData();
+  if (!projects?.length) return null;
+  return (
+    <section id="projects" className="section">
+      <div className="section-header">
+        <p className="section-label">PROJECTS.LOG</p>
+        <h2 className="section-title">Projects</h2>
+        <p className="section-sub">Things I've built, shipped, and learned from.</p>
+      </div>
+      <div className="projects-grid">
+        {projects.map((proj, i) => (
+          <article key={i} className="project-card">
+            <h3 className="project-card__title">{proj.title}</h3>
+            <p className="project-card__desc">{proj.description}</p>
+            <p className="project-card__tech">{proj.tech}</p>
+            <a href={proj.link} target="_blank" rel="noreferrer" className="project-card__link">
+              View on GitHub →
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -736,9 +859,12 @@ export default function App() {
                 </div>
                 <Terminal />
               </section>
+              <InterestsSection />
+              <TechStackSection />
               <SkillsSection />
               <ExperienceSection />
               <EducationSection />
+              <ProjectsSection />
             </div>
           </main>
 

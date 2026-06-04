@@ -1,13 +1,48 @@
 {
   "profile": {
-    "name": "Hilton Vusi Kholokholo",
-    "title": "IT Operations Engineer & Systems Developer",
-    "location": "Johannesburg, South Africa",
+    "name": "Hilton Kholokholo",
+    "title": "Aspiring Computer Scientist | IT Asset Specialist | Problem Solver",
+    "location": "South Africa 🇿🇦",
     "phone": "+27-646-816-715",
-    "email": "hiltonkholokholo@icloud.com",
+    "email": "damox101za@gmail.com",
+    "emailAlt": "hiltonkholokholo@icloud.com",
+    "github": "https://github.com/Damox101za",
     "linkedin": "https://www.linkedin.com/in/hilton-k-a824361a8/",
-    "github": "https://github.com",
-    "summary": "Highly analytical IT Operations Specialist and Systems Developer with a proven track record of building automated infrastructure solutions, managing enterprise data sanitization architecture, and developing internal software applications. Adept at bridging the gap between high-level network support and backend engineering to deliver secure, efficient, and cost-effective technology solutions."
+    "summary": "I'm Hilton Kholokholo, an IT Asset Specialist from South Africa with a passion for Computer Science and problem-solving. Currently pursuing a Higher Certificate in Information Technology, I'm dedicated to building meaningful solutions and expanding my technical expertise.",
+    "philosophy": "Nothing is impossible — but everything has its limits.",
+    "currentRole": "IT Asset Specialist",
+    "futureGoal": "Full-Stack Computer Scientist",
+    "learning": "Higher Certificate in Information Technology",
+    "workStyle": "Detail-oriented, collaborative, and results-driven"
+  },
+  "interests": [
+    { "icon": "✨", "text": "Full-Stack Development" },
+    { "icon": "🔐", "text": "Cybersecurity & System Administration" },
+    { "icon": "🤖", "text": "Problem-solving & Algorithm Design" },
+    { "icon": "🛠️", "text": "Open Source Contributions" },
+    { "icon": "📊", "text": "Data Structures & Algorithms" },
+    { "icon": "🌐", "text": "Web Development & Cloud Technologies" }
+  ],
+  "techStack": {
+    "languages": [
+      { "name": "Python", "icon": "python" },
+      { "name": "JavaScript", "icon": "javascript" },
+      { "name": "Go", "icon": "go" },
+      { "name": "C", "icon": "c" },
+      { "name": "Java", "icon": "java" },
+      { "name": "HTML5", "icon": "html5" },
+      { "name": "CSS3", "icon": "css3" },
+      { "name": "Bash", "icon": "bash" }
+    ],
+    "tools": [
+      { "name": "Linux", "icon": "linux" },
+      { "name": "Git", "icon": "git" },
+      { "name": "VS Code", "icon": "vscode" },
+      { "name": "GitHub", "icon": "github" },
+      { "name": "NPM", "icon": "npm" },
+      { "name": "Docker", "icon": "docker" },
+      { "name": "Figma", "icon": "figma" }
+    ]
   },
   "skills": [
     { "name": "Go (Golang)",         "category": "Languages & Data",         "color": "cyan",   "level": 90 },
@@ -64,6 +99,26 @@
       "institution": "Gauteng City College / MICT SETA",
       "year": "2021",
       "highlights": ["NQF Level 4", "Technical Support Specialisation"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Portfolio Website",
+      "description": "Personal portfolio showcasing projects, skills, and experience",
+      "tech": "HTML, CSS, JavaScript",
+      "link": "https://github.com/Damox101za?tab=repositories"
+    },
+    {
+      "title": "System Tools",
+      "description": "Command-line utilities & automation scripts",
+      "tech": "Python, Bash, Go",
+      "link": "https://github.com/Damox101za?tab=repositories"
+    },
+    {
+      "title": "Learning Projects",
+      "description": "Educational projects demonstrating CS fundamentals",
+      "tech": "Python, Java, C",
+      "link": "https://github.com/Damox101za?tab=repositories"
     }
   ]
 }

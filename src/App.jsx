@@ -3,6 +3,12 @@ import React, {
   createContext, useContext,
 } from 'react';
 import AdminPanel from './AdminPanel.jsx';
+import LogoLoop from './LogoLoop.jsx';
+import {
+  SiGo, SiNodedotjs, SiReact, SiJavascript,
+  SiLinux, SiGithub, SiVmware, SiDocker,
+  SiPostgresql, SiNginx, SiPython, SiTailwindcss,
+} from 'react-icons/si';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Default data (fallback when backend is unreachable)
@@ -128,6 +134,27 @@ const DEFAULT_DATA = {
 };
 
 const CATEGORIES = ['All', 'Languages & Data', 'Systems & Infrastructure', 'Enterprise Operations'];
+
+const SKILL_COLOR_HEX = { cyan: '#00d4ff', purple: '#a855f7', blue: '#60a5fa' };
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Tech logos for the marquee strip
+// ─────────────────────────────────────────────────────────────────────────────
+
+const TECH_LOGOS = [
+  { node: <SiGo />,          title: 'Go (Golang)'  },
+  { node: <SiNodedotjs />,   title: 'Node.js'      },
+  { node: <SiReact />,       title: 'React'        },
+  { node: <SiJavascript />,  title: 'JavaScript'   },
+  { node: <SiPython />,      title: 'Python'       },
+  { node: <SiPostgresql />,  title: 'SQL'          },
+  { node: <SiLinux />,       title: 'Linux'        },
+  { node: <SiDocker />,      title: 'Docker'       },
+  { node: <SiNginx />,       title: 'Nginx'        },
+  { node: <SiVmware />,      title: 'VMware'       },
+  { node: <SiGithub />,      title: 'GitHub'       },
+  { node: <SiTailwindcss />, title: 'Tailwind CSS' },
+];
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Context
@@ -349,6 +376,32 @@ function Hero() {
         </div>
       </div>
     </header>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Tech logo marquee strip
+// ─────────────────────────────────────────────────────────────────────────────
+
+function TechStrip() {
+  return (
+    <div className="tech-strip">
+      <span className="tech-strip__label">TECH STACK</span>
+      <div className="tech-strip__loop">
+        <LogoLoop
+          logos={TECH_LOGOS}
+          speed={55}
+          direction="left"
+          logoHeight={24}
+          gap={48}
+          hoverSpeed={0}
+          scaleOnHover
+          fadeOut
+          fadeOutColor="#04040a"
+          ariaLabel="Technologies used"
+        />
+      </div>
+    </div>
   );
 }
 
@@ -850,6 +903,7 @@ export default function App() {
 
           <main>
             <Hero />
+            <TechStrip />
             <div className="container">
               <section id="terminal" className="section">
                 <div className="section-header">

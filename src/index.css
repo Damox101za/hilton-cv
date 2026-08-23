@@ -434,12 +434,17 @@ body {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem;
   color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .terminal-state {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.65rem;
   letter-spacing: 0.12em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .terminal-state--boot  { color: rgba(254,188,46,0.8); }
 .terminal-state--ready { color: var(--green); }
@@ -450,6 +455,7 @@ body {
   min-height: 280px;
   max-height: 400px;
   overflow-y: auto;
+  overflow-x: auto;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.79rem;
   line-height: 1.65;
@@ -463,7 +469,7 @@ body {
 .terminal-body::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.2); border-radius: 2px; }
 
 /* Line types */
-.tl { margin-bottom: 1px; }
+.tl { margin-bottom: 1px; white-space: pre; }
 .tl--boot    { color: #4ade80; }
 .tl--input   { color: var(--cyan); }
 .tl--output  { color: #94a3b8; white-space: pre-wrap; margin-top: 2px; margin-bottom: 6px; }
@@ -1035,6 +1041,10 @@ body {
   .skills-grid { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); }
   .timeline { padding-left: 2rem; }
   .timeline-dot { left: -1.85rem; }
+
+  .terminal-chrome { padding: 0.65rem 0.85rem; }
+  .terminal-body { padding: 1rem 0.85rem; font-size: 0.62rem; }
+  .terminal-prompt, .terminal-input { font-size: 0.62rem; }
 }
 
 /* ── Download / Print button ────────────────────────────────────────────── */

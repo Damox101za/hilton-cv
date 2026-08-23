@@ -40,14 +40,13 @@
       { "name": "VS Code", "icon": "vscode" },
       { "name": "GitHub", "icon": "github" },
       { "name": "NPM", "icon": "npm" },
-      { "name": "Docker", "icon": "docker" },
-      { "name": "Figma", "icon": "figma" }
+      { "name": "Docker", "icon": "docker" }
     ]
   },
   "skills": [
     { "name": "Go (Golang)",         "category": "Languages & Data",         "color": "cyan",   "level": 90 },
     { "name": "Node.js",             "category": "Languages & Data",         "color": "cyan",   "level": 80 },
-    { "name": "SQL",                 "category": "Languages & Data",         "color": "cyan",   "level": 85 },
+    { "name": "JSON / CSV Data Handling", "category": "Languages & Data",    "color": "cyan",   "level": 78 },
     { "name": "JavaScript (React)",  "category": "Languages & Data",         "color": "cyan",   "level": 76 },
     { "name": "Advanced Excel",      "category": "Languages & Data",         "color": "cyan",   "level": 93 },
     { "name": "Server Architecture", "category": "Systems & Infrastructure", "color": "purple", "level": 88 },

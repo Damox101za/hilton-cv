@@ -6,8 +6,8 @@ import AdminPanel from './AdminPanel.jsx';
 import LogoLoop from './LogoLoop.jsx';
 import {
   SiGo, SiNodedotjs, SiReact, SiJavascript,
-  SiLinux, SiGithub, SiVmware, SiDocker,
-  SiPostgresql, SiNginx, SiPython, SiTailwindcss,
+  SiLinux, SiGithub, SiDocker,
+  SiNginx, SiPython, SiTailwindcss,
 } from 'react-icons/si';
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -57,7 +57,6 @@ const DEFAULT_DATA = {
       { name: 'GitHub', icon: 'github' },
       { name: 'NPM',    icon: 'npm'    },
       { name: 'Docker', icon: 'docker' },
-      { name: 'Figma',  icon: 'figma'  },
     ],
   },
   projects: [
@@ -83,7 +82,7 @@ const DEFAULT_DATA = {
   skills: [
     { name: 'Go (Golang)',         category: 'Languages & Data',         color: 'cyan',   level: 90 },
     { name: 'Node.js',             category: 'Languages & Data',         color: 'cyan',   level: 80 },
-    { name: 'SQL',                 category: 'Languages & Data',         color: 'cyan',   level: 85 },
+    { name: 'JSON / CSV Data Handling', category: 'Languages & Data',    color: 'cyan',   level: 78 },
     { name: 'JavaScript (React)',  category: 'Languages & Data',         color: 'cyan',   level: 76 },
     { name: 'Advanced Excel',      category: 'Languages & Data',         color: 'cyan',   level: 93 },
     { name: 'Server Architecture', category: 'Systems & Infrastructure', color: 'purple', level: 88 },
@@ -157,11 +156,9 @@ const TECH_LOGOS = [
   { node: <SiReact />,       title: 'React'        },
   { node: <SiJavascript />,  title: 'JavaScript'   },
   { node: <SiPython />,      title: 'Python'       },
-  { node: <SiPostgresql />,  title: 'SQL'          },
   { node: <SiLinux />,       title: 'Linux'        },
   { node: <SiDocker />,      title: 'Docker'       },
   { node: <SiNginx />,       title: 'Nginx'        },
-  { node: <SiVmware />,      title: 'VMware'       },
   { node: <SiGithub />,      title: 'GitHub'       },
   { node: <SiTailwindcss />, title: 'Tailwind CSS' },
 ];
@@ -245,7 +242,7 @@ const BOOT_LINES = [
   { text: '[OK]   Memory integrity: PASS',               type: 'boot'   },
   { text: '[OK]   Loading Go runtime environment…',      type: 'boot'   },
   { text: '[OK]   Node.js modules: LINKED',              type: 'boot'   },
-  { text: '[OK]   SQL engine: CONNECTED',                type: 'boot'   },
+  { text: '[OK]   JSON/CSV data pipeline: READY',        type: 'boot'   },
   { text: '[OK]   React UI layer: MOUNTED',              type: 'boot'   },
   { text: '[OK]   WinPE deployment engine: ACTIVE',      type: 'boot'   },
   { text: '[OK]   Server architecture module: ONLINE',   type: 'boot'   },
@@ -562,7 +559,6 @@ const DEVICON_MAP = {
   github:     'devicon-github-original',
   npm:        'devicon-npm-original-wordmark',
   docker:     'devicon-docker-plain',
-  figma:      'devicon-figma-plain',
 };
 
 function TechItem({ item }) {

@@ -912,6 +912,12 @@ body {
   font-size: 2rem;
   line-height: 1;
 }
+/* Linux (Tux) and GitHub (Octocat) render solid black by default,
+   which disappears against this dark UI — lighten just those two. */
+.tech-item__icon.devicon-linux-plain,
+.tech-item__icon.devicon-github-original {
+  color: #e5e7eb;
+}
 .tech-item__icon--fallback {
   width: 2rem;
   height: 2rem;

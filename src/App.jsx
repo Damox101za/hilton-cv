@@ -178,7 +178,7 @@ const useCVData = () => useContext(CVDataContext);
 // Terminal responses (built dynamically from live data)
 // ─────────────────────────────────────────────────────────────────────────────
 
-function buildResponses(profile, skills, experience) {
+function buildResponses(profile, skills, experience, education) {
   const byCategory = cat => skills.filter(s => s.category === cat).map(s => s.name).join(' · ');
 
   return {
@@ -217,11 +217,9 @@ function buildResponses(profile, skills, experience) {
       `> ${e.period.padEnd(13)}·  ${e.role}  @  ${e.company}\n    └─ ${e.bullets[0].slice(0, 60)}…`
     ).join('\n\n'),
 
-    education: `> 2022  ·  Intro to Programming — Boston City Campus
-    └─ Database Systems: 96% Distinction  ·  Systems Dev: 76%
-
-> 2021  ·  National Certificate: IT Technical Support (NQF 4)
-    └─ Gauteng City College / MICT SETA`,
+    education: education.map(ed =>
+      `> ${ed.year}  ·  ${ed.degree} — ${ed.institution}\n    └─ ${ed.highlights[0]}`
+    ).join('\n\n'),
 
     whoami: `hilton@dashboard:~$ id
 uid=1000(hilton) gid=1000(engineers)
@@ -421,11 +419,11 @@ function TechStrip() {
 // ─────────────────────────────────────────────────────────────────────────────
 
 function Terminal() {
-  const { profile, skills, experience } = useCVData();
+  const { profile, skills, experience, education } = useCVData();
 
   const responses = useMemo(
-    () => buildResponses(profile, skills, experience),
-    [profile, skills, experience],
+    () => buildResponses(profile, skills, experience, education),
+    [profile, skills, experience, education],
   );
 
   const [lines, setLines]         = useState([]);

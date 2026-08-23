@@ -6,7 +6,7 @@ import AdminPanel from './AdminPanel.jsx';
 import LogoLoop from './LogoLoop.jsx';
 import {
   SiGo, SiNodedotjs, SiReact, SiJavascript,
-  SiLinux, SiGithub, SiDocker,
+  SiLinux, SiGithub, SiVirtualbox,
   SiNginx, SiPython, SiTailwindcss,
 } from 'react-icons/si';
 
@@ -56,7 +56,8 @@ const DEFAULT_DATA = {
       { name: 'VS Code',icon: 'vscode' },
       { name: 'GitHub', icon: 'github' },
       { name: 'NPM',    icon: 'npm'    },
-      { name: 'Docker', icon: 'docker' },
+      { name: 'Hyper-V', icon: 'hyperv' },
+      { name: 'Oracle VirtualBox', icon: 'virtualbox' },
     ],
   },
   projects: [
@@ -157,7 +158,7 @@ const TECH_LOGOS = [
   { node: <SiJavascript />,  title: 'JavaScript'   },
   { node: <SiPython />,      title: 'Python'       },
   { node: <SiLinux />,       title: 'Linux'        },
-  { node: <SiDocker />,      title: 'Docker'       },
+  { node: <SiVirtualbox />,  title: 'VirtualBox'   },
   { node: <SiNginx />,       title: 'Nginx'        },
   { node: <SiGithub />,      title: 'GitHub'       },
   { node: <SiTailwindcss />, title: 'Tailwind CSS' },
@@ -558,7 +559,6 @@ const DEVICON_MAP = {
   vscode:     'devicon-vscode-plain',
   github:     'devicon-github-original',
   npm:        'devicon-npm-original-wordmark',
-  docker:     'devicon-docker-plain',
 };
 
 function TechItem({ item }) {

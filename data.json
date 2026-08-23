@@ -40,7 +40,8 @@
       { "name": "VS Code", "icon": "vscode" },
       { "name": "GitHub", "icon": "github" },
       { "name": "NPM", "icon": "npm" },
-      { "name": "Docker", "icon": "docker" }
+      { "name": "Hyper-V", "icon": "hyperv" },
+      { "name": "Oracle VirtualBox", "icon": "virtualbox" }
     ]
   },
   "skills": [

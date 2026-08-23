@@ -124,6 +124,7 @@ const DEFAULT_DATA = {
       degree: 'Higher Certificate in Information Technology',
       institution: 'MANCOSA', year: '2026',
       highlights: [
+        'NQF Level 5',
         'Overall average ~83%, 7 of 8 modules passed with distinction',
         'Computer Hardware and Architecture: 95% (Distinction)',
         'Essential Business Mathematics: 94% (Distinction)',

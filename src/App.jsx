@@ -6,9 +6,10 @@ import AdminPanel from './AdminPanel.jsx';
 import LogoLoop from './LogoLoop.jsx';
 import {
   SiGo, SiNodedotjs, SiReact, SiJavascript,
-  SiLinux, SiGithub, SiVmware, SiDocker,
-  SiPostgresql, SiNginx, SiPython, SiTailwindcss,
+  SiLinux, SiGithub, SiVirtualbox,
+  SiNginx, SiPython, SiTailwindcss,
 } from 'react-icons/si';
+import { FaWindows } from 'react-icons/fa';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Default data (fallback when backend is unreachable)
@@ -24,11 +25,11 @@ const DEFAULT_DATA = {
     emailAlt:    'hiltonkholokholo@icloud.com',
     linkedin:    'https://www.linkedin.com/in/hilton-k-a824361a8/',
     github:      'https://github.com/Damox101za',
-    summary:     "I'm Hilton Kholokholo, an IT Asset Specialist from South Africa with a passion for Computer Science and problem-solving. Currently pursuing a Higher Certificate in Information Technology, I'm dedicated to building meaningful solutions and expanding my technical expertise.",
+    summary:     "I'm Hilton Kholokholo, an IT Asset Specialist from South Africa with a passion for Computer Science and problem-solving. Having completed a Higher Certificate in Information Technology with distinction, I'm dedicated to building meaningful solutions and expanding my technical expertise.",
     philosophy:  'Nothing is impossible — but everything has its limits.',
     currentRole: 'IT Asset Specialist',
     futureGoal:  'Full-Stack Computer Scientist',
-    learning:    'Higher Certificate in Information Technology',
+    learning:    'Higher Certificate in Information Technology (Completed, MANCOSA)',
     workStyle:   'Detail-oriented, collaborative, and results-driven',
   },
   interests: [
@@ -56,8 +57,8 @@ const DEFAULT_DATA = {
       { name: 'VS Code',icon: 'vscode' },
       { name: 'GitHub', icon: 'github' },
       { name: 'NPM',    icon: 'npm'    },
-      { name: 'Docker', icon: 'docker' },
-      { name: 'Figma',  icon: 'figma'  },
+      { name: 'Hyper-V', icon: 'hyperv' },
+      { name: 'Oracle VirtualBox', icon: 'virtualbox' },
     ],
   },
   projects: [
@@ -83,7 +84,7 @@ const DEFAULT_DATA = {
   skills: [
     { name: 'Go (Golang)',         category: 'Languages & Data',         color: 'cyan',   level: 90 },
     { name: 'Node.js',             category: 'Languages & Data',         color: 'cyan',   level: 80 },
-    { name: 'SQL',                 category: 'Languages & Data',         color: 'cyan',   level: 85 },
+    { name: 'JSON / CSV Data Handling', category: 'Languages & Data',    color: 'cyan',   level: 78 },
     { name: 'JavaScript (React)',  category: 'Languages & Data',         color: 'cyan',   level: 76 },
     { name: 'Advanced Excel',      category: 'Languages & Data',         color: 'cyan',   level: 93 },
     { name: 'Server Architecture', category: 'Systems & Infrastructure', color: 'purple', level: 88 },
@@ -116,10 +117,22 @@ const DEFAULT_DATA = {
       bullets: [
         'Executed industrial data sanitization protocols, utilizing physical, magnetic, and software-driven data destruction methodologies.',
         'Supervised a small team of co-workers and managed operational tasks to ensure secure equipment processing lines ran smoothly and efficiently.',
+        'Built custom Excel forms and spreadsheets to track and record warehouse inventory, improving accuracy and visibility of equipment stock.',
+        'Provided technical support to staff and warehouse operations, troubleshooting hardware and software issues as they arose.',
       ],
     },
   ],
   education: [
+    {
+      degree: 'Higher Certificate in Information Technology',
+      institution: 'MANCOSA (NQF Level 5)', year: '2026',
+      highlights: [
+        'Overall average ~83%, 7 of 8 modules passed with distinction',
+        'Computer Hardware and Architecture: 95% (Distinction)',
+        'Essential Business Mathematics: 94% (Distinction)',
+        'SAQA ID: 93709',
+      ],
+    },
     {
       degree: 'Short Learning Programme: Introduction to Programming',
       institution: 'Boston City Campus', year: '2022',
@@ -127,8 +140,8 @@ const DEFAULT_DATA = {
     },
     {
       degree: 'National Certificate: IT (Technical Support)',
-      institution: 'Gauteng City College / MICT SETA', year: '2021',
-      highlights: ['NQF Level 4', 'Technical Support Specialisation'],
+      institution: 'Gauteng City College / MICT SETA (NQF Level 4)', year: '2021',
+      highlights: ['Technical Support Specialisation'],
     },
   ],
 };
@@ -147,11 +160,9 @@ const TECH_LOGOS = [
   { node: <SiReact />,       title: 'React'        },
   { node: <SiJavascript />,  title: 'JavaScript'   },
   { node: <SiPython />,      title: 'Python'       },
-  { node: <SiPostgresql />,  title: 'SQL'          },
   { node: <SiLinux />,       title: 'Linux'        },
-  { node: <SiDocker />,      title: 'Docker'       },
+  { node: <SiVirtualbox />,  title: 'VirtualBox'   },
   { node: <SiNginx />,       title: 'Nginx'        },
-  { node: <SiVmware />,      title: 'VMware'       },
   { node: <SiGithub />,      title: 'GitHub'       },
   { node: <SiTailwindcss />, title: 'Tailwind CSS' },
 ];
@@ -167,7 +178,7 @@ const useCVData = () => useContext(CVDataContext);
 // Terminal responses (built dynamically from live data)
 // ─────────────────────────────────────────────────────────────────────────────
 
-function buildResponses(profile, skills, experience) {
+function buildResponses(profile, skills, experience, education) {
   const byCategory = cat => skills.filter(s => s.category === cat).map(s => s.name).join(' · ');
 
   return {
@@ -206,11 +217,9 @@ function buildResponses(profile, skills, experience) {
       `> ${e.period.padEnd(13)}·  ${e.role}  @  ${e.company}\n    └─ ${e.bullets[0].slice(0, 60)}…`
     ).join('\n\n'),
 
-    education: `> 2022  ·  Intro to Programming — Boston City Campus
-    └─ Database Systems: 96% Distinction  ·  Systems Dev: 76%
-
-> 2021  ·  National Certificate: IT Technical Support (NQF 4)
-    └─ Gauteng City College / MICT SETA`,
+    education: education.map(ed =>
+      `> ${ed.year}  ·  ${ed.degree} — ${ed.institution}\n    └─ ${ed.highlights[0]}`
+    ).join('\n\n'),
 
     whoami: `hilton@dashboard:~$ id
 uid=1000(hilton) gid=1000(engineers)
@@ -235,7 +244,7 @@ const BOOT_LINES = [
   { text: '[OK]   Memory integrity: PASS',               type: 'boot'   },
   { text: '[OK]   Loading Go runtime environment…',      type: 'boot'   },
   { text: '[OK]   Node.js modules: LINKED',              type: 'boot'   },
-  { text: '[OK]   SQL engine: CONNECTED',                type: 'boot'   },
+  { text: '[OK]   JSON/CSV data pipeline: READY',        type: 'boot'   },
   { text: '[OK]   React UI layer: MOUNTED',              type: 'boot'   },
   { text: '[OK]   WinPE deployment engine: ACTIVE',      type: 'boot'   },
   { text: '[OK]   Server architecture module: ONLINE',   type: 'boot'   },
@@ -410,11 +419,11 @@ function TechStrip() {
 // ─────────────────────────────────────────────────────────────────────────────
 
 function Terminal() {
-  const { profile, skills, experience } = useCVData();
+  const { profile, skills, experience, education } = useCVData();
 
   const responses = useMemo(
-    () => buildResponses(profile, skills, experience),
-    [profile, skills, experience],
+    () => buildResponses(profile, skills, experience, education),
+    [profile, skills, experience, education],
   );
 
   const [lines, setLines]         = useState([]);
@@ -540,7 +549,7 @@ function InterestsSection() {
 const DEVICON_MAP = {
   python:     'devicon-python-plain',
   javascript: 'devicon-javascript-plain',
-  go:         'devicon-go-original',
+  go:         'devicon-go-plain',
   c:          'devicon-c-plain',
   java:       'devicon-java-plain',
   html5:      'devicon-html5-plain',
@@ -551,17 +560,24 @@ const DEVICON_MAP = {
   vscode:     'devicon-vscode-plain',
   github:     'devicon-github-original',
   npm:        'devicon-npm-original-wordmark',
-  docker:     'devicon-docker-plain',
-  figma:      'devicon-figma-plain',
+};
+
+// Tools without a devicon entry, but with a decent icon from react-icons
+const REACT_ICON_MAP = {
+  virtualbox: SiVirtualbox,
+  hyperv:     FaWindows,
 };
 
 function TechItem({ item }) {
   const iconClass = DEVICON_MAP[item.icon];
+  const ReactIcon = REACT_ICON_MAP[item.icon];
   return (
     <div className="tech-item">
       {iconClass
         ? <i className={`${iconClass} colored tech-item__icon`} aria-hidden="true" />
-        : <span className="tech-item__icon tech-item__icon--fallback">{item.name[0]}</span>
+        : ReactIcon
+          ? <span className="tech-item__icon tech-item__icon--fallback"><ReactIcon aria-hidden="true" /></span>
+          : <span className="tech-item__icon tech-item__icon--fallback">{item.name[0]}</span>
       }
       <span className="tech-item__name">{item.name}</span>
     </div>

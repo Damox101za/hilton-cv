@@ -8,11 +8,11 @@
     "emailAlt": "hiltonkholokholo@icloud.com",
     "github": "https://github.com/Damox101za",
     "linkedin": "https://www.linkedin.com/in/hilton-k-a824361a8/",
-    "summary": "I'm Hilton Kholokholo, an IT Asset Specialist from South Africa with a passion for Computer Science and problem-solving. Currently pursuing a Higher Certificate in Information Technology, I'm dedicated to building meaningful solutions and expanding my technical expertise.",
+    "summary": "I'm Hilton Kholokholo, an IT Asset Specialist from South Africa with a passion for Computer Science and problem-solving. Having completed a Higher Certificate in Information Technology with distinction, I'm dedicated to building meaningful solutions and expanding my technical expertise.",
     "philosophy": "Nothing is impossible — but everything has its limits.",
     "currentRole": "IT Asset Specialist",
     "futureGoal": "Full-Stack Computer Scientist",
-    "learning": "Higher Certificate in Information Technology",
+    "learning": "Higher Certificate in Information Technology (Completed, MANCOSA)",
     "workStyle": "Detail-oriented, collaborative, and results-driven"
   },
   "interests": [
@@ -40,14 +40,14 @@
       { "name": "VS Code", "icon": "vscode" },
       { "name": "GitHub", "icon": "github" },
       { "name": "NPM", "icon": "npm" },
-      { "name": "Docker", "icon": "docker" },
-      { "name": "Figma", "icon": "figma" }
+      { "name": "Hyper-V", "icon": "hyperv" },
+      { "name": "Oracle VirtualBox", "icon": "virtualbox" }
     ]
   },
   "skills": [
     { "name": "Go (Golang)",         "category": "Languages & Data",         "color": "cyan",   "level": 90 },
     { "name": "Node.js",             "category": "Languages & Data",         "color": "cyan",   "level": 80 },
-    { "name": "SQL",                 "category": "Languages & Data",         "color": "cyan",   "level": 85 },
+    { "name": "JSON / CSV Data Handling", "category": "Languages & Data",    "color": "cyan",   "level": 78 },
     { "name": "JavaScript (React)",  "category": "Languages & Data",         "color": "cyan",   "level": 76 },
     { "name": "Advanced Excel",      "category": "Languages & Data",         "color": "cyan",   "level": 93 },
     { "name": "Server Architecture", "category": "Systems & Infrastructure", "color": "purple", "level": 88 },
@@ -83,11 +83,24 @@
       "color": "purple",
       "bullets": [
         "Executed industrial data sanitization protocols, utilizing physical, magnetic, and software-driven data destruction methodologies.",
-        "Supervised a small team of co-workers and managed operational tasks to ensure secure equipment processing lines ran smoothly and efficiently."
+        "Supervised a small team of co-workers and managed operational tasks to ensure secure equipment processing lines ran smoothly and efficiently.",
+        "Built custom Excel forms and spreadsheets to track and record warehouse inventory, improving accuracy and visibility of equipment stock.",
+        "Provided technical support to staff and warehouse operations, troubleshooting hardware and software issues as they arose."
       ]
     }
   ],
   "education": [
+    {
+      "degree": "Higher Certificate in Information Technology",
+      "institution": "MANCOSA (NQF Level 5)",
+      "year": "2026",
+      "highlights": [
+        "Overall average ~83%, 7 of 8 modules passed with distinction",
+        "Computer Hardware and Architecture: 95% (Distinction)",
+        "Essential Business Mathematics: 94% (Distinction)",
+        "SAQA ID: 93709"
+      ]
+    },
     {
       "degree": "Short Learning Programme: Introduction to Programming",
       "institution": "Boston City Campus",
@@ -96,9 +109,9 @@
     },
     {
       "degree": "National Certificate: IT (Technical Support)",
-      "institution": "Gauteng City College / MICT SETA",
+      "institution": "Gauteng City College / MICT SETA (NQF Level 4)",
       "year": "2021",
-      "highlights": ["NQF Level 4", "Technical Support Specialisation"]
+      "highlights": ["Technical Support Specialisation"]
     }
   ],
   "projects": [

@@ -931,6 +931,10 @@ body {
   color: var(--purple);
   font-size: 1rem;
 }
+.tech-item__icon--fallback svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
 
 .tech-item__name {
   font-family: 'JetBrains Mono', monospace;

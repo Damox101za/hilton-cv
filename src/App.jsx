@@ -9,6 +9,7 @@ import {
   SiLinux, SiGithub, SiVirtualbox,
   SiNginx, SiPython, SiTailwindcss,
 } from 'react-icons/si';
+import { FaWindows } from 'react-icons/fa';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Default data (fallback when backend is unreachable)
@@ -561,13 +562,22 @@ const DEVICON_MAP = {
   npm:        'devicon-npm-original-wordmark',
 };
 
+// Tools without a devicon entry, but with a decent icon from react-icons
+const REACT_ICON_MAP = {
+  virtualbox: SiVirtualbox,
+  hyperv:     FaWindows,
+};
+
 function TechItem({ item }) {
   const iconClass = DEVICON_MAP[item.icon];
+  const ReactIcon = REACT_ICON_MAP[item.icon];
   return (
     <div className="tech-item">
       {iconClass
         ? <i className={`${iconClass} colored tech-item__icon`} aria-hidden="true" />
-        : <span className="tech-item__icon tech-item__icon--fallback">{item.name[0]}</span>
+        : ReactIcon
+          ? <span className="tech-item__icon tech-item__icon--fallback"><ReactIcon aria-hidden="true" /></span>
+          : <span className="tech-item__icon tech-item__icon--fallback">{item.name[0]}</span>
       }
       <span className="tech-item__name">{item.name}</span>
     </div>

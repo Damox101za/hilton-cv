@@ -122,9 +122,8 @@ const DEFAULT_DATA = {
   education: [
     {
       degree: 'Higher Certificate in Information Technology',
-      institution: 'MANCOSA', year: '2026',
+      institution: 'MANCOSA (NQF Level 5)', year: '2026',
       highlights: [
-        'NQF Level 5',
         'Overall average ~83%, 7 of 8 modules passed with distinction',
         'Computer Hardware and Architecture: 95% (Distinction)',
         'Essential Business Mathematics: 94% (Distinction)',
@@ -138,8 +137,8 @@ const DEFAULT_DATA = {
     },
     {
       degree: 'National Certificate: IT (Technical Support)',
-      institution: 'Gauteng City College / MICT SETA', year: '2021',
-      highlights: ['NQF Level 4', 'Technical Support Specialisation'],
+      institution: 'Gauteng City College / MICT SETA (NQF Level 4)', year: '2021',
+      highlights: ['Technical Support Specialisation'],
     },
   ],
 };

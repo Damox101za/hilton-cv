@@ -549,7 +549,7 @@ function InterestsSection() {
 const DEVICON_MAP = {
   python:     'devicon-python-plain',
   javascript: 'devicon-javascript-plain',
-  go:         'devicon-go-original',
+  go:         'devicon-go-plain',
   c:          'devicon-c-plain',
   java:       'devicon-java-plain',
   html5:      'devicon-html5-plain',
